@@ -1,0 +1,47 @@
+{
+    "name": "parcel-react-electron-kit",
+    "description": "",
+    "version": "0.1.0",
+    "main": "src/electron.js",
+    "scripts": {
+        "start": "npm run dev",
+        "electron": "electron .",
+        "react": "parcel ./src/index.html --port 3000",
+        "dev": "concurrently \"npm run react\" \"wait-on http://localhost:3000 && electron .\"",
+        "build": "parcel build ./src/index.html",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Sakari <sakari@mursu.dev>",
+    "license": "ISC",
+    "dependencies": {
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0",
+        "electron-is-dev": "^1.1.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.8.4",
+        "@babel/preset-env": "^7.8.4",
+        "@babel/preset-react": "^7.8.3",
+        "@hot-loader/react-dom": "^16.11.0",
+        "autoprefixer": "^9.7.4",
+        "concurrently": "^5.1.0",
+        "electron": "^8.0.1",
+        "electron-builder": "^22.3.2",
+        "husky": "^3.1.0",
+        "parcel-bundler": "^1.12.4",
+        "postcss-preset-env": "^6.7.0",
+        "prettier": "^1.19.1",
+        "pretty-quick": "^1.11.1",
+        "react-hot-loader": "^4.12.19",
+        "wait-on": "^4.0.0"
+    },
+    "alias": {
+        "react-dom": "@hot-loader/react-dom"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged"
+        }
+    }
+}
